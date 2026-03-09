@@ -12,7 +12,7 @@ if st.button("Get Summary"):
     if not keywords_input.strip():
         st.warning("Please enter at least one keyword.")
     else:
-        with st.spinner("Fetching news and generating AI summary... (this may take 30-60 seconds)"):
+        with st.spinner("Connecting to AI Pipeline... (Note: First search may take up to 60 seconds as the server wakes up)"):
             try:
                 response = requests.get(API_URL, params={"keywords": keywords_input}, timeout=120)
                 data = response.json()
